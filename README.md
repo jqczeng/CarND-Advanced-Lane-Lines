@@ -1,6 +1,9 @@
 ## Advanced Lane Finding
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
+[//]: # (Image References)
+
+[distorted-undistorted-chessboard]: ./output_images/distorted-chessboard.png "Distorted vs. Undistorted"
 
 In this project, your goal is to write a software pipeline to identify the lane boundaries in a video, but the main output or product we want you to create is a detailed writeup of the project.  Check out the [writeup template](https://github.com/udacity/CarND-Advanced-Lane-Lines/blob/master/writeup_template.md) for this project and use it as a starting point for creating your own writeup.  
 
@@ -23,6 +26,8 @@ Image distortions can affect the processing algorithms aimed at extracting infor
   * Make objects appear closer or farther away than they actually are
 
 Thus, a distortion correction needs to be applied to the raw images. The computer vision library OpenCV contains functions to calibrate the camera and for distortion correction. The functions are called `cv2.calibrateCamera()` and `cv2.undistort()`, respectively. A series of chessboard images are used. Chessboard images are used because of its distintive and easy-to-detect corner points as well as its high constract color between the squares. Also, the undistorted 2D image of a chessboard is known.
+
+![alt text][distorted-undistorted-chessboard]
 
 Threadholded Binary Image:
 ---
