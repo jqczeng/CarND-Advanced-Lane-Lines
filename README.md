@@ -29,9 +29,15 @@ Thus, a distortion correction needs to be applied to the raw images. The compute
 
 ![alt text][distorted-undistorted-chessboard]
 
+The distorted and undistorted images can be seen above. By applying the distortion correction algoirthm, the edges of the chessboard squares are straight like it should be.
+
 Threadholded Binary Image:
 ---
-A threshold filter is applied to each image after distortion correct. The thresholding is used to create a constrast within the image between objects and as well to filter out edges so that it will be easier to detect the lanes. 
+A threshold filter is applied to each image after distortion correct. The thresholding is used to create a constrast within the image between objects and as well to filter out edges so that it will be easier to detect the lanes. There are two thresholds combined together; a gradient threshold and a color threshold.
+
+A gradient threshold uses the Sobel operator to find the pixels within an image where there are is a change in intensity from one pixel to another. The gradient can be taken either in the x-drection or the y-direction of the image. The gradient is a vector and thus its direction and magnitude parameteres will indicate the intensity of change at each pixel, and infer how likely it is that that pixel represents an edge.
+
+A color threshold filters out certain pixels that are not deemed well for the 
 
 Perspective Transform:
 ---
