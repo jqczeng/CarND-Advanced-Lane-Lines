@@ -4,6 +4,7 @@
 [//]: # (Image References)
 
 [distorted-undistorted-chessboard]: ./output_images/distorted-chessboard.png "Distorted vs. Undistorted"
+[lane-fit]: ./output_images/color-fit-lines.jpg "Lane Line Fit"
 
 In this project, your goal is to write a software pipeline to identify the lane boundaries in a video, but the main output or product we want you to create is a detailed writeup of the project.  Check out the [writeup template](https://github.com/udacity/CarND-Advanced-Lane-Lines/blob/master/writeup_template.md) for this project and use it as a starting point for creating your own writeup.  
 
@@ -46,4 +47,7 @@ The perspective transform transforms a 3D image into a "2-D" birds-eye view of t
 Lane Detection:
 ---
 A histogram indicates where the lane lines start and can be used as a starting point for determining where the lane lines are. Next, a sliding window algorithm finds the location of the line at each section within the image. All of the pixels that belong to the left and right lane line are aggregated together and a line polynomial is fitted. 
+
+![alt text][lane-fit]
+
 
