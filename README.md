@@ -41,11 +41,9 @@ A color threshold filters out certain pixels that are not deemed well for the
 
 Perspective Transform:
 ---
-The perspective transform
+The perspective transform transforms a 3D image into a "2-D" birds-eye view of the road. The lanes can then be detected easier in a 2D image instead of a 3D image. The perspective transform is also able to determine the curvature of the lane and vehicle position with respect to center. 
 
-* Apply a perspective transform to rectify binary image ("birds-eye view").
-* Detect lane pixels and fit to find the lane boundary.
-* Determine the curvature of the lane and vehicle position with respect to center.
-* Warp the detected lane boundaries back onto the original image.
-* Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
+Lane Detection:
+---
+A histogram indicates where the lane lines start and can be used as a starting point for determining where the lane lines are. Next, a sliding window algorithm finds the location of the line at each section within the image. All of the pixels that belong to the left and right lane line are aggregated together and a line polynomial is fitted. 
 
