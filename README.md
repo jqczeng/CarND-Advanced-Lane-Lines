@@ -13,8 +13,9 @@
 [windowing-1]: ./output_images/windowing-1.png "Sliding Window Detection 1"
 [windowing-2]: ./output_images/windowing-2.png "Sliding Window Detection 2"
 
-In this project, the goal is to write a software pipeline to identify the road lane boundaries in a video. The radius of curvature for the lanes and as well as the car position are to be shown in the video as well. 
+In this project, the goal is to write a software pipeline to identify the road lane boundaries in a video. Each video image is filtered and converted into a high-contrast, binary image. The image is then transformed from a 3D image to a 2D image to curve fit the lane lines. The radius of curvature for the lanes and as well as the car position are then calculated. The fitted lane lines are then transformed back to the 3D image with the radius of curvature and car position displayed on the image. The result is a pipeline that can detect lane lines, straight or curved. 
 
+The following sections describe in detail the steps to detect lane lines. 
 
 Camera Calibration:
 ---
