@@ -10,6 +10,8 @@
 [birds-eye-2]: ./output_images/birds-eye-view-2.png "Bird's Eye View Lane Fitting 2"
 [detected-lane-1]: ./output_images/lane-detected-1.png "Detected Lane Area 1"
 [detected-lane-2]: ./output_images/lane-detected-2.png "Detected Lane Area 2"
+[windowing-1]: ./output_images/windowing-1.png "Sliding Window Detection 1"
+[windowing-2]: ./output_images/windowing-2.png "Sliding Window Detection 2"
 
 In this project, the goal is to write a software pipeline to identify the road lane boundaries in a video. The radius of curvature for the lanes and as well as the car position are to be shown in the video as well. 
 
@@ -47,7 +49,11 @@ The perspective transform transforms a 3D image into a "2-D" birds-eye view of t
 
 Lane Detection:
 ---
-A histogram indicates where the lane lines start and can be used as a starting point for determining where the lane lines are. Next, a sliding window algorithm finds the location of the line at each section within the image. All of the pixels that belong to the left and right lane line are aggregated together and a line polynomial is fitted. 
+A histogram indicates where the lane lines start and can be used as a starting point for determining where the lane lines are. Next, a sliding window algorithm finds the location of the line at each section within the image. The first window starts at where the histogram peaks are. Each peak represents one lane line. The window is an area which encapsulates a portion of the lane. The image is split into several windows due to the curvature and vertical height.  The windowing 
+
+![alt text][windowing-1]![alt text][windowing-2]
+
+After the windowing algorithm step has been carried out, a polynomial line is fitted for both lane lines. This can be seen in the picture below. 
 
 ![alt text][lane-fit]
 
