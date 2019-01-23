@@ -6,6 +6,8 @@
 [distorted-undistorted-chessboard]: ./output_images/distorted-chessboard.png "Distorted vs. Undistorted"
 [lane-fit]: ./output_images/color-fit-lines.jpg "Lane Line Fit"
 [thresholded]: ./output_images/original-threshold.png "Original vs. Thresholded"
+[birds-eye-1]: ./output_images/birds-eye-view-1.png "Bird's Eye View Lane Fitting 1"
+[birds-eye-2]: ./output_images/birds-eye-view-2.png "Bird's Eye View Lane Fitting 2"
 
 In this project, the goal is to write a software pipeline to identify the road lane boundaries in a video. The radius of curvature for the lanes and as well as the car position are to be shown in the video as well. 
 
