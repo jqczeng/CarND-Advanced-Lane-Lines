@@ -64,6 +64,12 @@ By using all of the forementioned tools, the lane lines of a road can be detecte
 
 ![alt text][detected-lane-1]![alt text][detected-lane-2]
 
+The resulting 
+
+<video width="320" height="240" controls>
+  <source src="project_video_with_lanes.mp4" type="video/mp4">
+</video>
+
 Future Work:
 ---
 There are several improvements to the pipeline that can be implemented to further enhance lane detection. First, a moving average of lane line fits can help filter out lane fit anomalies. Secondly, a sanity check can be implemented in order to check if the fitted lane line is correct. This can be done by comparing the currently fitted lane line to the history of fitted lane lines. 
