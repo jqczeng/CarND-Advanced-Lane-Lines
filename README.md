@@ -38,7 +38,7 @@ After the thresholds are applied to the image, the image is filtered and is read
 
 Perspective Transform:
 ---
-The perspective transform transforms a 3D image into a "2-D" birds-eye view of the road. The lanes can then be detected easier in a 2D image instead of a 3D image. The perspective transform is also able to determine the curvature of the lane and vehicle position with respect to center. 
+The perspective transform transforms a 3D image into a "2-D" birds-eye view of the road. The lanes can then be detected easier in a 2D image instead of a 3D image. The perspective transform also helps determine the curvature of the lane and vehicle position with respect to center. The bird's eye view can be seen in the pictures below. 
 
 ![alt text][birds-eye-1]
 ![alt text][birds-eye-2]
@@ -48,6 +48,10 @@ Lane Detection:
 A histogram indicates where the lane lines start and can be used as a starting point for determining where the lane lines are. Next, a sliding window algorithm finds the location of the line at each section within the image. All of the pixels that belong to the left and right lane line are aggregated together and a line polynomial is fitted. 
 
 ![alt text][lane-fit]
+
+Putting it all togther:
+---
+The lane detection step can be completed by 
 
 Future Work:
 ---
