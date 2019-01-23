@@ -5,18 +5,10 @@
 
 [distorted-undistorted-chessboard]: ./output_images/distorted-chessboard.png "Distorted vs. Undistorted"
 [lane-fit]: ./output_images/color-fit-lines.jpg "Lane Line Fit"
+[thresholded]: ./output_images/original-threshold.png "Original vs. Thresholded"
 
-In this project, your goal is to write a software pipeline to identify the lane boundaries in a video, but the main output or product we want you to create is a detailed writeup of the project.  Check out the [writeup template](https://github.com/udacity/CarND-Advanced-Lane-Lines/blob/master/writeup_template.md) for this project and use it as a starting point for creating your own writeup.  
+In this project, the goal is to write a software pipeline to identify the road lane boundaries in a video. The radius of curvature for the lanes and as well as the car position are to be shown in the video as well. 
 
-A great writeup should include the rubric points as well as your description of how you addressed each point.  You should include a detailed description of the code used in each step (with line-number references and code snippets where necessary), and links to other supporting documents or external references.  You should include images in your writeup to demonstrate how your code works with examples.  
-
-All that said, please be concise!  We're not looking for you to write a book here, just a brief description of how you passed each rubric point, and references to the relevant code :). 
-
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup.
-
-The Project:
----
-adsf
 
 Camera Calibration:
 ---
@@ -38,16 +30,25 @@ A threshold filter is applied to each image after distortion correct. The thresh
 
 A gradient threshold uses the Sobel operator to find the pixels within an image where there are is a change in intensity from one pixel to another. The gradient can be taken either in the x-drection or the y-direction of the image. The gradient is a vector and thus its direction and magnitude parameteres will indicate the intensity of change at each pixel, and infer how likely it is that that pixel represents an edge.
 
-A color threshold filters out certain pixels that are not deemed well for the 
+After the thresholds are applied to the image, the image is filtered and is ready to be used for lane detection. 
+
+![alt text][thresholded]
 
 Perspective Transform:
 ---
 The perspective transform transforms a 3D image into a "2-D" birds-eye view of the road. The lanes can then be detected easier in a 2D image instead of a 3D image. The perspective transform is also able to determine the curvature of the lane and vehicle position with respect to center. 
+
+![alt text][birds-eye-1]
+![alt text][birds-eye-2]
 
 Lane Detection:
 ---
 A histogram indicates where the lane lines start and can be used as a starting point for determining where the lane lines are. Next, a sliding window algorithm finds the location of the line at each section within the image. All of the pixels that belong to the left and right lane line are aggregated together and a line polynomial is fitted. 
 
 ![alt text][lane-fit]
+
+Future Work:
+---
+There are several improvements to the pipeline that can be implemented to further enhance lane detection. First, a moving average of lane line fits can help filter out lane fit anomalies. Secondly, a sanity check can be implemented in order to check if the fitted lane line is correct. This can be done by comparing the currently fitted lane line to the history of fitted lane lines. 
 
 
