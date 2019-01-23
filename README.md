@@ -64,11 +64,7 @@ By using all of the forementioned tools, the lane lines of a road can be detecte
 
 ![alt text][detected-lane-1]![alt text][detected-lane-2]
 
-The resulting 
-
-<video width="320" height="240" controls>
-  <source src="project_video_with_lanes.mp4" type="video/mp4">
-</video>
+The resulting video can be found in "project_video_with_lanes.mp4". The challenge video was also tested with the pipeline. However, there are several shortcomings which will be described in the future works section.
 
 Future Work:
 ---
