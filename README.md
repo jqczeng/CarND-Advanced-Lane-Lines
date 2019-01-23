@@ -49,11 +49,11 @@ The perspective transform transforms a 3D image into a "2-D" birds-eye view of t
 
 Lane Detection:
 ---
-A histogram indicates where the lane lines start and can be used as a starting point for determining where the lane lines are. Next, a sliding window algorithm finds the location of the line at each section within the image. The first window starts at where the histogram peaks are. Each peak represents one lane line. The window is an area which encapsulates a portion of the lane. The image is split into several windows due to the curvature and vertical height.  The windowing 
+A histogram indicates where the lane lines start and can be used as a starting point for determining where the lane lines are. Next, a sliding window algorithm finds the location of the line at each section within the image. The first window starts at where the histogram peaks are. Each peak represents one lane line. The window is a defined area which encapsulates a portion of the lane. The contrasted pixels within in the window which represents the lane lines are found. The window then moves to the next area of the image by moving the vertical distance of a single window. Lane lines are continuous lines, so in the next window, a margin in the X-direction can be used to find the lane line pixels. The image is split into several windows due to the curvature and vertical height. The windowing algorithm can be seen in the following images.
 
 ![alt text][windowing-1]![alt text][windowing-2]
 
-After the windowing algorithm step has been carried out, a polynomial line is fitted for both lane lines. This can be seen in the picture below. 
+After the windowing algorithm step has been carried out, a second order polynomial line is fitted for both lane lines. This can be seen in the picture below. 
 
 ![alt text][lane-fit]
 
