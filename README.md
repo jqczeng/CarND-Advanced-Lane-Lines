@@ -37,7 +37,7 @@ A threshold filter is applied to each image after distortion correct. The thresh
 
 A gradient threshold uses the Sobel operator to find the pixels within an image where there are is a change in intensity from one pixel to another. The gradient can be taken either in the x-drection or the y-direction of the image. The gradient is a vector and thus its direction and magnitude parameteres will indicate the intensity of change at each pixel, and infer how likely it is that that pixel represents an edge.
 
-After the thresholds are applied to the image, the image is filtered and is ready to be used for lane detection. 
+I applied a Sobel filter in the X direction and as well as a saturation threshold. The two filters are then convoluted together to enhance the filtering. After the thresholds are applied to the image, the image is filtered and is ready to be used for lane detection. This can be seen in the image below.
 
 ![alt text][thresholded]
 
