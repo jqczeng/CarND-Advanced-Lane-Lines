@@ -62,7 +62,7 @@ The code for the windowing algorithm can be found in the `fit_polynomial` functi
 
 Putting it all togther:
 ---
-By using all of the forementioned tools, the lane lines of a road can be detected. The detected area and lane lines can be seen in the following pictures. The green area represents the lane area in front of the vehicle. The red lines overlaying the white lane lines represents the detected lane lines.
+By using all of the forementioned tools, the lane lines of a road can be detected. The detected area and lane lines can be seen in the following pictures. The green area represents the lane area in front of the vehicle. The red lines overlaying the white lane lines represents the detected lane lines. The pipeline code can be found in the `process_image` function in `project_2.ipynb`.
 
 ![alt text][detected-lane-1]![alt text][detected-lane-2]
 
@@ -73,5 +73,3 @@ Here's a [link to my video result](./project_video_with_lanes.mp4)
 Future Work:
 ---
 There are several improvements to the pipeline that can be implemented to further enhance lane detection. First, a moving average of lane line fits can help filter out lane fit anomalies. Secondly, a sanity check can be implemented in order to check if the fitted lane line is correct. This can be done by comparing the currently fitted lane line to the history of fitted lane lines. 
-
-
