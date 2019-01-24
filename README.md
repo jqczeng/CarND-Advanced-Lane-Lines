@@ -54,11 +54,11 @@ A histogram indicates where the lane lines start and can be used as a starting p
 
 ![alt text][windowing-1]![alt text][windowing-2]
 
-After the windowing algorithm step has been carried out, a second order polynomial line is fitted for both lane lines. This can be seen in the picture below. 
+After the windowing algorithm step has been carried out, a second order polynomial line is fitted for both lane lines. The Numpy function `polyfit` is used to fit the collected left and right lane data points into a second order equation. This can be seen in the picture below. 
 
 ![alt text][lane-fit]
 
-The code for the windowing algorithm can be found in block 5 in my code in `project_2.ipynb`.
+The code for the windowing algorithm can be found in the `fit_polynomial` function and its `find_lane_pixels` sub-function in my code in `project_2.ipynb`.
 
 Putting it all togther:
 ---
