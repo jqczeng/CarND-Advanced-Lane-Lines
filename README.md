@@ -58,6 +58,8 @@ After the windowing algorithm step has been carried out, a second order polynomi
 
 ![alt text][lane-fit]
 
+The code for the windowing algorithm can be found in block 5 in my code in `project_2.ipynb`.
+
 Putting it all togther:
 ---
 By using all of the forementioned tools, the lane lines of a road can be detected. The detected area and lane lines can be seen in the following pictures. The green area represents the lane area in front of the vehicle. The red lines overlaying the white lane lines represents the detected lane lines.
